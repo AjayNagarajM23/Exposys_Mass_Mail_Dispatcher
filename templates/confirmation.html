@@ -1,0 +1,32 @@
+{% extends 'index.html' %}{% block title %}Confirmation-Mail{% endblock title %}
+
+{% block body %}
+    <label style="font-size: 50px; font-weight: bold; display: flex; justify-content: center">Confirmation</label>
+    <div class="container-sm" data-bs-spy="scroll"
+         style="display: flex ; justify-content: center; margin-top: 10%; background-color: #4ac1f7; min-height: 600px; border-radius: 30px; font-size: xx-large; padding: 40px">
+        <table style="border: 3px solid black;border-collapse: collapse; width: 800px; text-align: center"
+               class="table-success">
+            <thead>
+            <tr>
+                <th>Mail ID's</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for message in messages %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                    <tr>
+                        <td style="border: 3px solid black;border-collapse: collapse;"><b> {{ message }} </b></td>
+                        <td style="border: 3px solid black;border-collapse: collapse;"><b> Sent </b></td>
+                    </tr>
+                {% elif message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+                    <tr>
+                        <td style="border: 3px solid black;border-collapse: collapse;"><b> {{ message }} </b></td>
+                        <td style="border: 3px solid black;border-collapse: collapse;"><b> Not Sent (Invalid) </b></td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock body %}

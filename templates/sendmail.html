@@ -1,0 +1,37 @@
+{% extends 'index.html' %}{% block title %}Send-Mail{% endblock title %}
+
+{% block body %}
+    <label style="font-size: 80px; font-weight: bold; display: flex; justify-content: center">Send Mail</label>
+    <div class="container-sm"
+         style="display: flex; justify-content: center; background-color: rgb(85,184,255) ; border-radius: 20px">>
+        <form action="/sendmail" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label style="font-size: 70px ; color: #2b2b2b; font-weight: bold; display: flex; justify-content: center">~~
+                Upload Your CSV File ~~</label><br>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"
+                       style="font-size: xxx-large; margin-top: 5%; margin-left: 10%">Select CSV File To Be Uploaded
+                    ...</label>
+                <input type="file" class="form-control" accept=".xlsx, .xls, .csv" name="myFile"
+                       style="margin-top: 5%; max-width: 300px; margin-left: 30%">
+                <div id="emailHelp" class="form-text"
+                     style="font-size: larger; color: #ff0121; margin-left: 27%; margin-top: 10px">
+                    Upload the CSV file with the recipient list.<br> Make sure that all
+                    the mail-id should be under column named "mail". <br> Otherwise, the mail will not be verified
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label" style="font-size: xx-large">Enter Mail
+                        Subject</label>
+                    <input type="text" class="form-control" name="subject">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label"
+                           style="font-size:x-large">Description</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content"></textarea>
+                </div>
+                <div style="display: flex; justify-content: center">
+                    <button class="btn btn-danger btn-lg">Send Mails</button>
+                </div>
+        </form>
+    </div>
+{% endblock body %}
