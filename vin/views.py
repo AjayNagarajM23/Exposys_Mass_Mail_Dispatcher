@@ -1,4 +1,5 @@
 import string
+import time
 
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
@@ -71,9 +72,10 @@ def sendmail(request):
         subject = request.POST['subject']
         content = request.POST['content']
         file = request.FILES["myFile"]
+        delTime = request.POST['delay']
         df = pd.read_csv(file)
         arr = df["mail"]
-
+        time.sleep(int(delTime)*60)
         for ele in arr:
             ele = ele + ""
             email_address = ele
