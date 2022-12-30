@@ -19,6 +19,5 @@ It will use API and Regular Exp to verify an E-Mail
 ![image](https://user-images.githubusercontent.com/105035860/210092414-250e861a-b193-4a31-9658-5d8ec1ce67c0.png)
 
 ## Send Mail Result
-It will use API and Regular Exp to verify an E-Mail
-It will send the Mail about entered Suject And Description
+It will use API and Regular Exp to verify an E-Mail & It will send the Mail about entered Suject And Description
 ![image](https://user-images.githubusercontent.com/105035860/210092552-0d6d3694-b5fb-4631-9059-484643776ba6.png)
