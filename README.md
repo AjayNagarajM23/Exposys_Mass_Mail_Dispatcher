@@ -3,6 +3,9 @@
 # Screenshots
 
 ## Login Page
+### Only Admin Can send Mails
+### UserName : shetty
+### Password : 1234
 ![image](https://user-images.githubusercontent.com/105035860/210091950-d40f4c15-f9cc-431d-ac9c-bfb7c880a288.png)
 
 ## Home Page
